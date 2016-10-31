@@ -11,7 +11,11 @@ for root, dirs, files in os.walk("../"):
         oldFilePath = root + file
         newFilePath = root + newFileName + ext
 
-        if (oldFilePath == newFilePath):
+        if oldFilePath == newFilePath:
+            continue
+
+        if os.path.isfile(newFilePath):
+            print("File {} already exists".format(newFilePath))
             continue
 
         os.rename(oldFilePath, newFilePath)
