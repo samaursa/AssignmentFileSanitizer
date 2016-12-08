@@ -27,7 +27,7 @@ for root, dirs, files in os.walk(dirToWalk):
                 continue
 
             if os.path.isfile(newFilePath):
-                print("File {} already exists".format(newFilePath))
+                print("File {} already exists. Rename FAILED.".format(newFilePath))
                 continue
 
             os.rename(oldFilePath, newFilePath)
